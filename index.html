@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Premier Medical & Technical Institute — Skill Development & E-Commerce">
+<meta name="theme-color" content="#087f73">
+<title>Premier Medical & Technical Institute | PMTI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#087f73;--primary-dark:#05665d;--secondary:#0aa08f;
+  --accent:#f59e0b;--green:#20c66a;--dark:#17332f;--text:#42504d;
+  --muted:#71807c;--light:#effbf9;--white:#fff;
+  --shadow:0 15px 45px rgba(0,0,0,.09);--radius:24px;
+}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:'Atma',cursive;background:#f7fffd;color:var(--text);line-height:1.7;overflow-x:hidden}
+button,input,textarea,select{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:auto;padding:0 20px}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(15px);box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.header-inner{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.logo{width:56px;height:56px;border-radius:50%;object-fit:cover;border:3px solid var(--primary);box-shadow:0 6px 18px rgba(8,127,115,.18);flex:none}
+.logo-fallback{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;display:none;align-items:center;justify-content:center;font-weight:700;flex:none}
+.brand-title{font-size:21px;font-weight:700;color:var(--primary);line-height:1.15}
+.brand-subtitle{font-size:13px;color:#777}
+nav{display:flex;align-items:center;gap:18px}
+nav a{font-size:16px;font-weight:600;color:#33403d}
+nav a:hover{color:var(--primary)}
+.menu-btn{display:none;border:0;background:transparent;font-size:28px}
+.action-area{background:linear-gradient(135deg,#ff9f0a,#ffb52d);padding:10px}
+.action-inner{display:flex;justify-content:center;gap:10px}
+.action-btn,.primary-btn,.whatsapp-btn,.course-btn,.product-btn,.submit-btn{border:0;border-radius:14px;font-weight:700;transition:.25s}
+.action-btn{padding:9px 18px;box-shadow:0 7px 20px rgba(0,0,0,.1)}
+.admission-btn{background:#fff;color:#794b00}.login-btn{background:var(--primary);color:#fff}
+.action-btn:hover,.primary-btn:hover,.whatsapp-btn:hover,.course-btn:hover,.product-btn:hover{transform:translateY(-2px)}
+.hero{background:radial-gradient(circle at 10% 20%,rgba(12,170,145,.11),transparent 30%),radial-gradient(circle at 90% 80%,rgba(255,159,10,.13),transparent 30%),linear-gradient(135deg,#f1fffc,#fff)}
+.hero-inner{min-height:610px;padding:70px 20px;display:grid;grid-template-columns:1.08fr .92fr;gap:50px;align-items:center}
+.hero h1{font-size:52px;line-height:1.25;color:var(--primary);margin-bottom:18px}
+.hero h1 span{color:#e58b00}.hero p{font-size:20px;color:#68736f;margin-bottom:28px;max-width:680px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+.primary-btn,.whatsapp-btn{display:inline-block;padding:12px 23px;font-size:17px;color:#fff}
+.primary-btn{background:var(--primary)}.whatsapp-btn{background:var(--green)}
+.hero-card{position:relative}.hero-image{width:100%;height:400px;object-fit:cover;border-radius:34px;box-shadow:var(--shadow)}
+.floating-card{position:absolute;left:-22px;bottom:-22px;background:#fff;padding:15px 20px;border-radius:18px;box-shadow:var(--shadow);color:var(--primary);font-weight:700}
+section{padding:78px 0}.section-title{text-align:center;margin-bottom:45px}.section-title h2{font-size:40px;line-height:1.2;color:var(--primary)}.section-title p{font-size:17px;color:var(--muted);margin-top:8px}
+.features,.course-grid,.product-grid{display:grid;gap:22px}.features{grid-template-columns:repeat(4,1fr)}
+.feature{background:#fff;padding:28px 18px;text-align:center;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.06);border:1px solid #e7f3f0}
+.feature-icon{font-size:40px}.feature h3{color:var(--primary);font-size:21px}
+.courses{background:#fff}.course-grid,.product-grid{grid-template-columns:repeat(3,1fr)}
+.course-card,.product-card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #e7f3f0;transition:.3s}
+.course-card:hover,.product-card:hover{transform:translateY(-6px)}
+.course-image{width:100%;height:215px;object-fit:cover}.product-image{width:100%;height:225px;object-fit:cover}
+.course-body,.product-body{padding:22px}.course-body h3,.product-body h3{color:var(--primary);font-size:23px;margin-bottom:8px}.course-body p,.product-body p{color:#68736f}
+.course-meta{display:flex;justify-content:space-between;gap:10px;margin:16px 0;font-size:16px}.price,.product-price{color:#df8700;font-weight:700}.course-btn{width:100%;padding:11px;background:var(--primary);color:#fff;font-size:16px}
+.products,.contact{background:var(--light)}.product-price{font-size:20px;margin:8px 0 13px}.product-btn{display:block;text-align:center;padding:10px;background:var(--green);color:#fff}
+.about{background:#fff}.about-box{background:linear-gradient(135deg,#087f73,#0aa08f);color:#fff;padding:48px;border-radius:30px;box-shadow:var(--shadow)}.about-box h2{font-size:36px;margin-bottom:12px}.about-box p{font-size:18px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.contact-card{background:#fff;padding:28px;border-radius:24px;box-shadow:var(--shadow)}.contact-card h3{color:var(--primary);font-size:26px;margin-bottom:12px}.contact-item{padding:7px 0;font-size:17px}
+footer{background:#123d37;color:#fff;text-align:center;padding:32px 20px}footer h3{font-size:25px}footer p{color:#d3e4e1}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;z-index:3000;padding:20px}.modal.active{display:flex}
+.modal-box{width:100%;max-width:530px;max-height:90vh;overflow:auto;background:#fff;border-radius:28px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.modal-header h2{color:var(--primary);font-size:28px}.close-btn{border:0;background:#f0f5f4;width:40px;height:40px;border-radius:50%;font-size:22px}
+.form-group{margin-bottom:14px}.form-group label{display:block;margin-bottom:4px;font-weight:600}.form-group input,.form-group textarea,.form-group select{width:100%;border:1px solid #d5e6e2;padding:11px 13px;border-radius:12px;outline:0;background:#fbfffe;font-size:16px}.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(8,127,115,.08)}.submit-btn{width:100%;padding:12px;background:var(--primary);color:#fff;font-size:17px}
+.login-logo{width:72px;height:72px;margin:0 auto 14px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:24px}
+.login-help{text-align:center;margin-top:14px;color:#788581}
+.dashboard{display:none;position:fixed;inset:0;background:#f3fbf9;z-index:2500;overflow:auto}.dashboard.active{display:block}
+.dashboard-header{background:linear-gradient(135deg,#087f73,#0a9d8c);color:#fff;padding:24px 20px}.dashboard-header-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px}.student-welcome h2{font-size:30px}.student-welcome p{opacity:.85}.logout-btn{border:0;background:#fff;color:#087f73;padding:9px 18px;border-radius:12px;font-weight:700}
+.dashboard-content{max-width:1200px;margin:auto;padding:28px 20px}.dashboard-grid{display:grid;grid-template-columns:235px 1fr;gap:22px}.dashboard-menu,.student-content{background:#fff;border-radius:22px;box-shadow:var(--shadow)}.dashboard-menu{padding:14px;height:max-content}.dashboard-menu button{width:100%;border:0;background:transparent;padding:12px;text-align:left;border-radius:11px;font-size:16px}.dashboard-menu button:hover,.dashboard-menu button.active{background:#e5f7f3;color:var(--primary)}.student-content{padding:28px}.student-section{display:none}.student-section.active{display:block}.student-section h2{color:var(--primary);font-size:30px;margin-bottom:18px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:22px}.stat-card{padding:18px;border-radius:17px;background:#f0fbf9}.stat-card h3{color:#70807c;font-size:15px}.stat-card strong{display:block;font-size:28px;color:var(--primary)}
+.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{padding:11px;border-bottom:1px solid #e7eeee;text-align:left}th{color:var(--primary)}
+.toast{position:fixed;right:18px;bottom:18px;background:#17332f;color:#fff;padding:13px 18px;border-radius:13px;z-index:5000;transform:translateY(100px);opacity:0;transition:.3s}.toast.show{transform:translateY(0);opacity:1}
+@media(max-width:900px){.menu-btn{display:block}.header-inner{flex-wrap:wrap}nav{display:none;width:100%;flex-direction:column;align-items:flex-start;padding:8px 0}nav.active{display:flex}.hero-inner{grid-template-columns:1fr;text-align:center}.hero p{margin-left:auto;margin-right:auto}.hero-buttons{justify-content:center}.hero h1{font-size:42px}.course-grid,.product-grid{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}.dashboard-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.container{padding:0 14px}.logo,.logo-fallback{width:48px;height:48px}.brand-title{font-size:17px}.brand-subtitle{font-size:11px}.action-btn{padding:7px 12px;font-size:14px}.hero-inner{padding:55px 15px}.hero h1{font-size:34px}.hero p{font-size:17px}.hero-image{height:280px}.floating-card{left:10px;bottom:-15px;font-size:14px}.section-title h2{font-size:32px}.course-grid,.product-grid,.features,.stats{grid-template-columns:1fr}section{padding:55px 0}.about-box{padding:30px 22px}.about-box h2{font-size:29px}.dashboard-header-inner{align-items:flex-start;flex-direction:column}.student-content{padding:20px}}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="#home" class="brand" aria-label="PMTI Home">
+      <img src="logo.jpg" class="logo" alt="PMTI Logo"
+           onerror="this.style.display='none';document.getElementById('logoFallback').style.display='flex'">
+      <div id="logoFallback" class="logo-fallback">PMTI</div>
+      <div>
+        <div class="brand-title">Premier Medical & Technical Institute</div>
+        <div class="brand-subtitle">Skill Development & E-Commerce</div>
+      </div>
+    </a>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    <nav id="mainNav">
+      <a href="#home">হোম</a><a href="#courses">কোর্স</a><a href="#products">পণ্য</a>
+      <a href="#about">আমাদের সম্পর্কে</a><a href="#contact">যোগাযোগ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="action-area">
+  <div class="action-inner">
+    <button class="action-btn admission-btn" onclick="openAdmission()">📝 ভর্তি / Admission</button>
+    <button class="action-btn login-btn" onclick="openLogin()">🎓 শিক্ষার্থী লগইন</button>
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div>
+      <h1>দক্ষতা অর্জন করুন,<br><span>নিজের ভবিষ্যৎ গড়ে তুলুন</span></h1>
+      <p>Premier Medical & Technical Institute-এর বাস্তবমুখী প্রশিক্ষণের মাধ্যমে নিজেকে দক্ষ করে তুলুন এবং ভবিষ্যতের জন্য প্রস্তুত হোন।</p>
+      <div class="hero-buttons">
+        <a href="#courses" class="primary-btn">কোর্স দেখুন</a>
+        <a href="https://wa.me/8801306258338" target="_blank" rel="noopener" class="whatsapp-btn">WhatsApp করুন</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img class="hero-image" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80" alt="Students learning">
+      <div class="floating-card">🎓 আপনার দক্ষতা, আপনার ভবিষ্যৎ</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title"><h2>কেন PMTI?</h2><p>দক্ষতা উন্নয়নের জন্য একটি আধুনিক প্রশিক্ষণ প্ল্যাটফর্ম</p></div>
+    <div class="features">
+      <div class="feature"><div class="feature-icon">🎓</div><h3>দক্ষ প্রশিক্ষণ</h3><p>বাস্তবভিত্তিক প্রশিক্ষণের মাধ্যমে দক্ষতা অর্জন করুন।</p></div>
+      <div class="feature"><div class="feature-icon">💻</div><h3>প্রযুক্তিনির্ভর শিক্ষা</h3><p>আধুনিক প্রযুক্তি ব্যবহার করে শেখার সুযোগ।</p></div>
+      <div class="feature"><div class="feature-icon">📊</div><h3>Student Dashboard</h3><p>ফলাফল, উপস্থিতি ও একাউন্ট এক জায়গায়।</p></div>
+      <div class="feature"><div class="feature-icon">🏆</div><h3>ক্যারিয়ার প্রস্তুতি</h3><p>বাস্তব জীবনের প্রয়োজন অনুযায়ী দক্ষতা তৈরি করুন।</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="courses" id="courses">
+  <div class="container">
+    <div class="section-title"><h2>আমাদের কোর্সসমূহ</h2><p>আপনার পছন্দের দক্ষতা অর্জনের জন্য প্রশিক্ষণ কোর্স নির্বাচন করুন।</p></div>
+    <div class="course-grid">
+      <article class="course-card">
+        <img class="course-image" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" alt="Healthcare training">
+        <div class="course-body"><h3>কেয়ার গিভার প্রশিক্ষণ</h3><p>বয়স্ক, অসুস্থ ও বিশেষ যত্নপ্রয়োজন এমন ব্যক্তিদের পেশাদার পরিচর্যার জন্য তাত্ত্বিক ও ব্যবহারিক প্রশিক্ষণ।</p><div class="course-meta"><span>⏱️ ৬ মাস</span><span class="price">💰 ৳২৫,০০০</span></div><button class="course-btn" onclick="orderWhatsApp('কেয়ার গিভার প্রশিক্ষণ')">WhatsApp-এ ভর্তি করুন</button></div>
+      </article>
+      <article class="course-card">
+        <img class="course-image" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80" alt="Block batik design">
+        <div class="course-body"><h3>ব্লক-বাটিক ডিজাইন ও প্রোডাকশন</h3><p>ব্লক ডিজাইন, বাটিক প্রিন্টিং, রঙের ব্যবহার, কাপড় প্রস্তুতকরণ ও প্রোডাকশনভিত্তিক হাতে-কলমে প্রশিক্ষণ।</p><div class="course-meta"><span>⏱️ ৩ মাস</span><span class="price">💰 ৳১২,০০০</span></div><button class="course-btn" onclick="orderWhatsApp('ব্লক-বাটিক ডিজাইন ও প্রোডাকশন')">WhatsApp-এ ভর্তি করুন</button></div>
+      </article>
+      <article class="course-card">
+        <img class="course-image" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80" alt="E-commerce training">
+        <div class="course-body"><h3>ডিজিটাল স্কিল ও ই-কমার্স</h3><p>অনলাইন ব্যবসা, ডিজিটাল মার্কেটিং, কনটেন্ট, ই-কমার্স ও প্রয়োজনীয় ডিজিটাল দক্ষতা অর্জনের প্রশিক্ষণ।</p><div class="course-meta"><span>⏱️ ৩ মাস</span><span class="price">💰 ৳১৫,০০০</span></div><button class="course-btn" onclick="orderWhatsApp('ডিজিটাল স্কিল ও ই-কমার্স')">WhatsApp-এ ভর্তি করুন</button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-title"><h2>শিক্ষার্থীদের তৈরি পণ্য</h2><p>আমাদের শিক্ষার্থীদের হাতে তৈরি মানসম্মত পণ্য সংগ্রহ করুন।</p></div>
+    <div class="product-grid">
+      <article class="product-card"><img class="product-image" src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=80" alt="Handmade saree"><div class="product-body"><h3>হ্যান্ডমেড বাটিক শাড়ি</h3><p>শিক্ষার্থীদের হাতে তৈরি সুন্দর ও আকর্ষণীয় বাটিক ডিজাইনের শাড়ি।</p><div class="product-price">💰 ৳১,৫০০</div><a class="product-btn" target="_blank" rel="noopener" href="https://wa.me/8801306258338?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%B9%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A6%AE%E0%A7%87%E0%A6%A1%20%E0%A6%AC%E0%A6%BE%E0%A6%9F%E0%A6%BF%E0%A6%95%20%E0%A6%B6%E0%A6%BE%E0%A7%9C%E0%A6%BF%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87">WhatsApp-এ অর্ডার করুন</a></div></article>
+      <article class="product-card"><img class="product-image" src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=900&q=80" alt="Handmade gift item"><div class="product-body"><h3>রুক-বাটিক গিফট আইটেম</h3><p>নিজস্ব ডিজাইন ও হাতে তৈরি আকর্ষণীয় গিফট আইটেম।</p><div class="product-price">💰 ৳৮০০</div><a class="product-btn" target="_blank" rel="noopener" href="https://wa.me/8801306258338?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%B0%E0%A7%81%E0%A6%95-%E0%A6%AC%E0%A6%BE%E0%A6%9F%E0%A6%BF%E0%A6%95%20%E0%A6%97%E0%A6%BF%E0%A6%AB%E0%A6%9F%20%E0%A6%86%E0%A6%87%E0%A6%9F%E0%A7%87%E0%A6%AE%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87">WhatsApp-এ অর্ডার করুন</a></div></article>
+      <article class="product-card"><img class="product-image" src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80" alt="Handmade bag"><div class="product-body"><h3>হ্যান্ডমেড ব্যাগ</h3><p>প্রশিক্ষণপ্রাপ্ত শিক্ষার্থীদের তৈরি সুন্দর ও ব্যবহারযোগ্য হ্যান্ডমেড ব্যাগ।</p><div class="product-price">💰 ৳৮০০</div><a class="product-btn" target="_blank" rel="noopener" href="https://wa.me/8801306258338?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%B9%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A6%AE%E0%A7%87%E0%A6%A1%20%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%97%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87">WhatsApp-এ অর্ডার করুন</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container"><div class="about-box"><h2>Premier Medical & Technical Institute</h2><p>PMTI একটি skill development ও e-commerce ভিত্তিক প্রশিক্ষণ প্ল্যাটফর্ম। আমাদের লক্ষ্য হলো শিক্ষার্থীদের বাস্তবমুখী দক্ষতা অর্জনে সহায়তা করা এবং তাদের ভবিষ্যৎ কর্মজীবনের জন্য প্রস্তুত করা।</p></div></div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-title"><h2>যোগাযোগ করুন</h2><p>ভর্তি, কোর্স অথবা পণ্য সম্পর্কে জানতে যোগাযোগ করুন।</p></div>
+    <div class="contact-grid">
+      <div class="contact-card"><h3>📞 PMTI</h3><div class="contact-item">📱 WhatsApp: <strong>01306258338</strong></div><div class="contact-item">📧 Email: <strong>abrarkawsar993@gmail.com</strong></div><div class="contact-item">📍 Linkroad, Cox's Bazar</div></div>
+      <div class="contact-card"><h3>💬 দ্রুত যোগাযোগ</h3><p style="margin-bottom:18px">কোর্স বা পণ্য সম্পর্কে জানতে সরাসরি WhatsApp-এ যোগাযোগ করতে পারেন।</p><a href="https://wa.me/8801306258338" target="_blank" rel="noopener" class="whatsapp-btn">WhatsApp করুন</a></div>
+    </div>
+  </div>
+</section>
+
+<footer><h3>Premier Medical & Technical Institute</h3><p>Skill Development & E-Commerce</p><p>© 2026 PMTI. All Rights Reserved.</p></footer>
+
+<div class="modal" id="admissionModal">
+  <div class="modal-box">
+    <div class="modal-header"><h2>📝 ভর্তি / Admission</h2><button class="close-btn" onclick="closeAdmission()">×</button></div>
+    <form onsubmit="submitAdmission(event)">
+      <div class="form-group"><label for="admissionName">শিক্ষার্থীর নাম</label><input id="admissionName" required placeholder="আপনার পূর্ণ নাম"></div>
+      <div class="form-group"><label for="admissionPhone">মোবাইল নম্বর</label><input id="admissionPhone" type="tel" required placeholder="01XXXXXXXXX"></div>
+      <div class="form-group"><label for="admissionEmail">ই-মেইল</label><input id="admissionEmail" type="email" placeholder="example@gmail.com"></div>
+      <div class="form-group"><label for="admissionCourse">কোর্স নির্বাচন করুন</label><select id="admissionCourse" required><option value="">কোর্স নির্বাচন করুন</option><option>কেয়ার গিভার প্রশিক্ষণ</option><option>ব্লক-বাটিক ডিজাইন ও প্রোডাকশন</option><option>ডিজিটাল স্কিল ও ই-কমার্স</option></select></div>
+      <div class="form-group"><label for="admissionAddress">ঠিকানা</label><textarea id="admissionAddress" rows="3" placeholder="আপনার ঠিকানা"></textarea></div>
+      <button class="submit-btn" type="submit">ভর্তি ফর্ম জমা দিন</button>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="loginModal">
+  <div class="modal-box">
+    <div class="modal-header"><h2>🎓 Student Login</h2><button class="close-btn" onclick="closeLogin()">×</button></div>
+    <div class="login-logo">PMTI</div>
+    <div class="form-group"><label for="studentId">Student ID</label><input id="studentId" placeholder="Student ID"></div>
+    <div class="form-group"><label for="studentPassword">Password</label><input id="studentPassword" type="password" placeholder="Password"></div>
+    <button class="submit-btn" onclick="studentLogin()">🔐 লগইন করুন</button>
+    <div id="loginMessage" style="text-align:center;margin-top:12px;font-weight:600"></div>
+    <div class="login-help">Demo Login:<br>Student ID: <strong>PMTI001</strong><br>Password: <strong>123456</strong></div>
+  </div>
+</div>
+
+<div class="dashboard" id="dashboard">
+  <div class="dashboard-header"><div class="dashboard-header-inner"><div class="student-welcome"><h2>👋 স্বাগতম, আরিফ হাসান</h2><p>Student ID: PMTI001</p></div><button class="logout-btn" onclick="logout()">Logout</button></div></div>
+  <div class="dashboard-content"><div class="dashboard-grid">
+    <div class="dashboard-menu">
+      <button class="active" onclick="showStudentSection('overview',this)">🏠 Dashboard</button>
+      <button onclick="showStudentSection('profile',this)">👤 আমার প্রোফাইল</button>
+      <button onclick="showStudentSection('result',this)">📊 রেজাল্ট</button>
+      <button onclick="showStudentSection('attendance',this)">📅 উপস্থিতি</button>
+      <button onclick="showStudentSection('account',this)">💳 একাউন্ট</button>
+      <button onclick="showStudentSection('coursesStudent',this)">📚 আমার কোর্স</button>
+      <button onclick="showStudentSection('notice',this)">🔔 নোটিশ</button>
+    </div>
+    <div class="student-content">
+      <div class="student-section active" id="overview"><h2>Student Dashboard</h2><div class="stats"><div class="stat-card"><h3>Attendance</h3><strong>92%</strong></div><div class="stat-card"><h3>Result</h3><strong>A+</strong></div><div class="stat-card"><h3>Due Amount</h3><strong>৳০</strong></div></div><p>আপনার প্রয়োজনীয় সকল তথ্য এখান থেকে দেখতে পারবেন।</p></div>
+      <div class="student-section" id="profile"><h2>👤 আমার প্রোফাইল</h2><p><strong>নাম:</strong> আরিফ হাসান</p><p><strong>Student ID:</strong> PMTI001</p><p><strong>মোবাইল:</strong> 01300000000</p><p><strong>কোর্স:</strong> কেয়ার গিভার প্রশিক্ষণ</p><p><strong>ব্যাচ:</strong> 2026</p></div>
+      <div class="student-section" id="result"><h2>📊 আমার রেজাল্ট</h2><div class="table-wrap"><table><thead><tr><th>বিষয়</th><th>পূর্ণমান</th><th>প্রাপ্ত</th><th>গ্রেড</th></tr></thead><tbody><tr><td>Patient Care</td><td>100</td><td>91</td><td>A+</td></tr><tr><td>Basic Nursing</td><td>100</td><td>87</td><td>A+</td></tr><tr><td>Practical</td><td>100</td><td>94</td><td>A+</td></tr></tbody></table></div></div>
+      <div class="student-section" id="attendance"><h2>📅 উপস্থিতির তথ্য</h2><div class="stats"><div class="stat-card"><h3>মোট ক্লাস</h3><strong>50</strong></div><div class="stat-card"><h3>উপস্থিত</h3><strong>46</strong></div><div class="stat-card"><h3>অনুপস্থিত</h3><strong>4</strong></div></div><p>মোট উপস্থিতি: <strong>92%</strong></p></div>
+      <div class="student-section" id="account"><h2>💳 আমার একাউন্ট</h2><div class="stats"><div class="stat-card"><h3>কোর্স ফি</h3><strong>৳২৫,০০০</strong></div><div class="stat-card"><h3>পরিশোধ</h3><strong>৳২৫,০০০</strong></div><div class="stat-card"><h3>বকেয়া</h3><strong>৳০</strong></div></div><p>আপনার সকল পেমেন্টের তথ্য ভবিষ্যতে এখানে দেখা যাবে।</p></div>
+      <div class="student-section" id="coursesStudent"><h2>📚 আমার কোর্স</h2><p><strong>কেয়ার গিভার প্রশিক্ষণ</strong></p><p>কোর্সের মেয়াদ: ৬ মাস</p><p>Batch: 2026</p><p>Status: <strong style="color:#20a35a">Active</strong></p></div>
+      <div class="student-section" id="notice"><h2>🔔 নোটিশ</h2><div class="stat-card"><strong style="font-size:20px">📢 গুরুত্বপূর্ণ নোটিশ</strong><p>আগামী সপ্তাহের ক্লাসের সময়সূচি Student Dashboard-এ প্রকাশ করা হবে।</p></div></div>
+    </div>
+  </div></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const WHATSAPP="8801306258338";
+const ADMISSION_EMAIL="abrarkawsar993@gmail.com";
+
+function toggleMenu(){document.getElementById("mainNav").classList.toggle("active")}
+function openAdmission(){document.getElementById("admissionModal").classList.add("active")}
+function closeAdmission(){document.getElementById("admissionModal").classList.remove("active")}
+function openLogin(){document.getElementById("loginModal").classList.add("active");document.getElementById("loginMessage").innerText=""}
+function closeLogin(){document.getElementById("loginModal").classList.remove("active")}
+
+function submitAdmission(e){
+  e.preventDefault();
+  const name=document.getElementById("admissionName").value.trim();
+  const phone=document.getElementById("admissionPhone").value.trim();
+  const email=document.getElementById("admissionEmail").value.trim();
+  const course=document.getElementById("admissionCourse").value;
+  const address=document.getElementById("admissionAddress").value.trim();
+
+  const subject=encodeURIComponent("PMTI Admission - "+name);
+  const body=encodeURIComponent(
+`PMTI Admission Form
+
+শিক্ষার্থীর নাম: ${name}
+মোবাইল: ${phone}
+ই-মেইল: ${email || "দেওয়া হয়নি"}
+কোর্স: ${course}
+ঠিকানা: ${address || "দেওয়া হয়নি"}
+
+এই আবেদনটি PMTI ওয়েবসাইটের Admission Form থেকে পাঠানো হয়েছে।`
+  );
+
+  window.location.href=`mailto:${ADMISSION_EMAIL}?subject=${subject}&body=${body}`;
+  showToast("ফর্ম প্রস্তুত হয়েছে। আপনার Email App থেকে Send করুন।");
+}
+
+function studentLogin(){
+  const id=document.getElementById("studentId").value.trim();
+  const password=document.getElementById("studentPassword").value.trim();
+  const msg=document.getElementById("loginMessage");
+
+  if(id==="PMTI001" && password==="123456"){
+    msg.style.color="#159447";msg.innerText="✓ Login সফল হচ্ছে...";
+    setTimeout(()=>{closeLogin();document.getElementById("dashboard").classList.add("active");document.body.style.overflow="hidden"},500);
+  }else{msg.style.color="#d93025";msg.innerText="✕ Student ID অথবা Password সঠিক নয়।"}
+}
+
+function showStudentSection(id,btn){
+  document.querySelectorAll(".student-section").forEach(x=>x.classList.remove("active"));
+  document.querySelectorAll(".dashboard-menu button").forEach(x=>x.classList.remove("active"));
+  document.getElementById(id).classList.add("active");btn.classList.add("active");
+}
+function logout(){
+  document.getElementById("dashboard").classList.remove("active");
+  document.body.style.overflow="auto";
+  document.getElementById("studentId").value="";
+  document.getElementById("studentPassword").value="";
+  showToast("আপনি সফলভাবে Logout করেছেন।");
+}
+function orderWhatsApp(course){
+  const text=encodeURIComponent(`আসসালামু আলাইকুম। আমি "${course}" কোর্সে ভর্তি হতে চাই। বিস্তারিত জানতে চাই।`);
+  window.open(`https://wa.me/${WHATSAPP}?text=${text}`,"_blank");
+}
+function showToast(message){
+  const t=document.getElementById("toast");t.innerText=message;t.classList.add("show");
+  clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove("show"),3500);
+}
+document.addEventListener("click",e=>{
+  if(e.target===document.getElementById("admissionModal"))closeAdmission();
+  if(e.target===document.getElementById("loginModal"))closeLogin();
+  if(e.target.closest("nav a"))document.getElementById("mainNav").classList.remove("active");
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){closeAdmission();closeLogin()}
+});
+</script>
+</body>
+</html>
